@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script>
+        function valid(){
+            var name=document.signup.Name.value;
+            var email=document.signup.email.value;
+            var atposition=email.indexOf("@");  
+            var dotposition=email.lastIndexOf(".");   
+            var pass=document.signup.pass.value;
+            if(name==""||name==null){
+                alert("All fields are mandatory and to be filled");
+                return false;
+            }
+            
+            else if(email==""||email==null){
+                alert("All fields are mandatory and to be filled");
+                return false;
+            }
+            else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+                alert("enter appropiate email id");
+                return false;
+            }
+            else if(pass==""||pass==null){
+                alert("All fields are mandatory and to be filled");
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<style>
+    *{
+        margin:0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .head h2{
+        align-items: center;
+        font-weight:700;
+    }
+    .Email-log input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+    .pass input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+    .c-pass input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+    .act-name input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+    .star{
+        color: red;
+    }
+</style>
+<body>
+    <form name="signup" method="post" action="addacct.php" ">
+        <div class="head">
+            <h2>Create an account !!</h2>
+        </div><br>
+        <div class="act-name">
+            <label>Name :</label><span class="star">*</span>
+            <br>
+            <input type="text" name="Name" placeholder="Enter the your name">
+        </div><br>
+        <div class="Email-log">
+            <label>Email Id :</label><span class="star">*</span>
+            <br>
+            <input type="email" name="email" placeholder="Enter your email id">
+        </div>
+        <br>
+        <div class="pass">
+            <label>Create Password :</label><span class="star">*</span>
+            <br>
+            <input type="password" name="pass" placeholder="Enter password">
+        </div><br>
+        <br>
+        <div class="button">
+            <button class="btn" type="submit" onclick="return valid()" > CREATE </button>
+        </div><br>
+        <div class="links">
+            <a href="./login.html">Login !!</a>
+        </div>
+    </form>
+</body>
+</html>

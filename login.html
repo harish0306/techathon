@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <script>
+        function validlogin(){
+            var email=document.login.email.value;
+            var pass=document.login.pass.value;
+            var atposition=email.indexOf("@");  
+            var dotposition=email.lastIndexOf(".");
+            if(email==""|| email==null){
+                alert("all field are mandatory and need to be filled !!!!");
+                return false;
+            }
+            if(pass==""||pass==null){
+                alert("all field are mandatory and need to be filled !!!!");
+                return false;
+            }
+            else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+                alert("Enter appropiate email id");
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<style>
+    *{
+        margin:0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .head h2{
+        align-items: center;
+        font-weight:700;
+    }
+    .Email-log input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+    .pass input{
+        width: 15%;
+        padding:5px;
+        border-radius: .5rem;
+    }
+</style>
+<body>
+    <form name="login" method="post" action="./login.php">
+        <div class="head">
+            <h2>Login Form</h2>
+        </div>
+        <div class="Email-log">
+            <label>Email Id :</label>
+            <br>
+            <input type="email" name="email" placeholder="Enter the registered email id">
+        </div>
+        <br>
+        <div class="pass">
+            <label>Password :</label>
+            <br>
+            <input type="password" name="pass" placeholder="Enter password">
+        </div>
+        <br>
+        <div class="button">
+            <button class="btn" type="submit" onclick=" return validlogin()">LOGIN</button>
+        </div><br>
+        <div class="links">
+            <a href="./forgotpas.html">Forgot Password ?</a>
+            <a href="./signup.html">Sign up!!</a>
+        </div>
+    </form>
+</body>
+</html>
